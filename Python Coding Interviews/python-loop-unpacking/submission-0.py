@@ -1,0 +1,21 @@
+from typing import List, Tuple
+
+
+def best_student(scores: List[Tuple[str, int]]) -> str:
+    #unpack into name and score
+    #keep a running count of highest score and their name
+    #at end of loop return both
+    highScore = 0
+    highScoreName = ""
+    for name, score in scores:
+        if score > highScore:
+            highScore = score
+            highScoreName = name
+    return highScoreName
+
+
+# do not modify below this line
+print(best_student([("Alice", 90), ("Bob", 80), ("Charlie", 70)]))
+print(best_student([("Alice", 90), ("Bob", 80), ("Charlie", 100)]))
+print(best_student([("Alice", 90), ("Bob", 100), ("Charlie", 70)]))
+print(best_student([("Alice", 90), ("Bob", 90), ("Charlie", 80), ("David", 100)]))
