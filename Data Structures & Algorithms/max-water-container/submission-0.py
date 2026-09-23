@@ -1,0 +1,18 @@
+class Solution:
+    def maxArea(self, heights: List[int]) -> int:
+        #Find Maximum water a container can store
+        #left and right pointer
+        #Find Max Width and Max Height, so area, max area
+        #
+        highestArea = 0
+        l, r = 0, len(heights) - 1
+        while l < r:
+            area = (r - l) * min(heights[r], heights[l])
+            if area > highestArea:
+                highestArea = area
+
+            if heights[r] > heights[l]:
+                l += 1
+            else:
+                r -= 1
+        return highestArea
