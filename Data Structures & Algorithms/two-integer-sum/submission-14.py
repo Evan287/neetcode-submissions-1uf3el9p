@@ -1,0 +1,10 @@
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        diffMap = defaultdict(int)
+        for i, n in enumerate(nums):
+            diff = target - n
+            if diff in diffMap:
+                return [diffMap[diff], i]
+            else:
+                diffMap[n] = i
+                #0,3 1,4
